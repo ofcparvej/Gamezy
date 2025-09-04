@@ -4,13 +4,13 @@ const User = require("../model/User");
 
 //add cart
 exports.addItem = async (req,res) => {
-    console.log("inside cart------------------> ADD" , req.body  )
+    // console.log("inside cart------------------> ADD" , req.body  )
     let id = req.params.id
 
       try {
         // const user=await User.findById(id);
         const user = await User.findOne({_id:id})
-        console.log("user---->" , user)
+        // console.log("user---->" , user)
 
     //     if(!user){
     //         // res.status(400).json("User not found");
@@ -36,7 +36,7 @@ exports.addItem = async (req,res) => {
 
 // remove fromcart
 exports.removeItem = async (req,res) => {
-    console.log("remeve ffrom cart ================>")
+    // console.log("remeve ffrom cart ================>")
     try {
       const userId=req.params.userId;
       const cartItemId=req.params.cartItemId;
@@ -64,12 +64,12 @@ exports.removeItem = async (req,res) => {
 }   
 
 exports.getCart = async (req,res) => {
-    console.log("inside get cart---------->")
+    // console.log("inside get cart---------->")
    
     try {
         const user = await User.findById(req.params.id);
-        console.log("userobj id",req.params.id);
-        console.log("user",user);
+        // console.log("userobj id",req.params.id);
+        // console.log("user",user);
         res.status(200).json({
             success:true,
             message:"user is",
@@ -150,7 +150,7 @@ exports.decreaseItem = async (req,res) => {
 }
 //empty cart
 exports.emptyCart = async (req,res) => {
-    console.log("Inside empty  car----")
+    // console.log("Inside empty  car----")
     try {
         let id = req.params.userId;
         const user = await User.findById({_id:id});

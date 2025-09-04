@@ -65,7 +65,7 @@ exports.login= async (req,res) => {
 
         const {email , password} = req.body;
 
-        console.log("req-------------->" , req.body);
+        // console.log("req-------------->" , req.body);
        
 
         // if(!email || !password){
@@ -77,7 +77,7 @@ exports.login= async (req,res) => {
 
         let foundUser= await User.findOne({email:email});
 
-        console.log("foundUser--------------->" , foundUser);
+        // console.log("foundUser--------------->" , foundUser);
 
         // if(!foundUser){
         //     res.status(400).json({
@@ -128,7 +128,7 @@ exports.login= async (req,res) => {
             lowerCaseAlphabets:false,
             specialChars:false,
           })
-          console.log("otp ganerated -" , otp);
+        //   console.log("otp ganerated -" , otp);
           // is unique....
           const result = await OTP.findOne({otp:otp});
     
@@ -146,7 +146,7 @@ exports.login= async (req,res) => {
           const otpPayload = {email,otp};
           //create entry in db..
           const otpBody = await OTP.create(otpPayload);
-          console.log(otpBody);
+        //   console.log(otpBody);
     
           res.status(200).json({
             success:true,
@@ -226,7 +226,7 @@ exports.resetPassword = async (req,res) => {
 
         res.status(200).json({
                     success:true,
-                    message:"le otp",
+                    message:"le otp",      
                     enteredOtp,
                     foundOtp,
                     newPassword,

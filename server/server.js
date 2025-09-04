@@ -2,7 +2,7 @@ const express = require("express");
 var cors = require('cors')
 
 const app = express();
-require('dotenv').config();
+require('dotenv').config();     
 
 const PORT=process.env.PORT || 8000;
 
@@ -24,7 +24,13 @@ app.use("/api/payment",paymentRoute);
 
 
 
+app.get("/",(req,res)=>{
 
+    return res.json({
+        success:true,
+        message:"your server is up and running..."
+    })
+})
 
  
 

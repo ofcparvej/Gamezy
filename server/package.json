@@ -1,5 +1,7 @@
 {
   "description": "",
+  "name":"gamezy",
+  "author":"Mohammad Parvej officialparvej.mo@gmail.com",
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon server.js"

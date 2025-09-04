@@ -1,7 +1,7 @@
 const User=require("../model/User");
 
 exports.addToList = async (req,res) => {
-    console.log("INSIDE WISHLIST ----------------->"  )
+    // console.log("INSIDE WISHLIST ----------------->"  )
     try {
         const user = await User.findOne({_id:req.params.id});
         if(!user){
@@ -33,9 +33,9 @@ exports.removefomList = async (req,res) => {
         
     const userId = req.params.userId;
     const wishlistItemId=req.params.wishlistItemId;
-    console.log("userId=>" , userId ,  wishlistItemId)
+    // console.log("userId=>" , userId ,  wishlistItemId)
     const user = await User.findOne({_id:userId});
-    console.log("user=>" , user)
+    // console.log("user=>" , user)
 
     // if(!user)res.status(400).json("User Not Found");
 
@@ -44,9 +44,9 @@ exports.removefomList = async (req,res) => {
 
     user.wishlist.splice(itemIndex,1);
     const updatedUser = await user.save();
-    console.log("Updated => " , updatedUser)
+    // console.log("Updated => " , updatedUser)
 
-    // res.status(200).json("Product DELETED to wishlist successfully");
+    res.status(200).json("Product DELETED to wishlist successfully");
 
 
  

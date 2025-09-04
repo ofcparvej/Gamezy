@@ -6,7 +6,7 @@ exports.addOrder = async(req,res) => {
     try {
          let id = req.params.id;
         const user = await User.findOne({_id:id});
-        console.log("user----->>>>>>>>>>",user);
+        // console.log("user----->>>>>>>>>>",user);
 
         if(!user){
             return res.status(404).json("User Not Found");
@@ -29,12 +29,12 @@ exports.addOrder = async(req,res) => {
 }
 
 exports.getAllOrders = async (req,res) => {
-    console.log("resPar=>" , req.params.id)
+    // console.log("resPar=>" , req.params.id)
     let id = req.params.id;
     try {
         const user = await  User.findOne({_id:id});
-        console.log("idd", req.params.id);
-        console.log("orders",user);
+        // console.log("idd", req.params.id);
+        // console.log("orders",user);
         res.status(200).json(user.orders);
 
     } catch (err){
