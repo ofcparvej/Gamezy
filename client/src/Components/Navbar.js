@@ -15,7 +15,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const options = ["Profile", "Cart", "Log Out"];
   const handleOptionClick = (option) => {
-    // console.log("option is--->>",option);
     setSelectedOption(option);
     setIsOpen(false);
   };
@@ -30,7 +29,7 @@ const handleLogOut = () => {
         <div className="flex items-center justify-center text-3xl md:text-xl sm:text-base">
           <BiSolidGame />
           <h1 style={{ fontFamily: "Brosalino" }} className="font-bold text-white">
-            GameHub
+            GameZy
           </h1>
         </div>
       </Link>
